@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "43UWdZalxKNsmHHptIOfJcbP5rxhhb+SKh84PSe1gC4=",
+  "Source": "OtelAwsConsoleDemo",
+  "BasePath": "_content/OtelAwsConsoleDemo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
