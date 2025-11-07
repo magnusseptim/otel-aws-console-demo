@@ -9,6 +9,10 @@
 Small .NET app showing **traces + metrics + logs** with OpenTelemetry.
 
 ```ascii
+
+docker compose
+(app + collector sidecar)
+
 +------------------------+
 |  .NET demo app (API)   |
 |  - System.Diagnostics  |
@@ -23,10 +27,6 @@ Small .NET app showing **traces + metrics + logs** with OpenTelemetry.
 |  - OTLP receiver       |
 |  - debug exporter      |  --> prints telemetry to console
 +-----------+------------+
-            ^
-            |
-         docker compose
-  (app + collector sidecar)
 
 ```
 
