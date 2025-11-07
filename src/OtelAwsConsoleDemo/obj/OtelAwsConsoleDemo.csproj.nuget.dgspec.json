@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[1.13.1, )"
             },
+            "OpenTelemetry.Extensions.AWS": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
             "OpenTelemetry.Extensions.Hosting": {
               "target": "Package",
               "version": "[1.13.1, )"

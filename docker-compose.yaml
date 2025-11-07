@@ -1,0 +1,35 @@
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.138.0
+    command: ["--config=/etc/otelcol/config.yaml"]
+    volumes:
+      - type: bind
+        source: ./collector/config.yaml
+        target: /etc/otelcol/config.yaml
+        read_only: true
+    ports:
+      - "4317:4317"   # OTLP gRPC
+      - "4318:4318"   # OTLP HTTP
+    healthcheck:
+      test: ["CMD", "otelcol-contrib", "--version"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: otel-aws-console-demo:local
+    ports:
+      - "8080:8080"
+    environment:
+      OTEL_SERVICE_NAME: otel-aws-console-demo
+      OTEL_RESOURCE_ATTRIBUTES: deployment.environment=dev,service.version=1.0.0
+      OTEL_PROPAGATORS: tracecontext,baggage,xray
+      OTEL_TRACES_SAMPLER: parentbased_always_on
+      # Send all signals to the Collector via OTLP/gRPC (4317)
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4317
+      OTEL_METRIC_EXPORT_INTERVAL: "5000"
+    depends_on:
+      - otel-collector

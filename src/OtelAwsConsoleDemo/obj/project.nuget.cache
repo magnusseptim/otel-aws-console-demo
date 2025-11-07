@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x8XYV/V9/KY=",
+  "dgSpecHash": "1ZBwR0t+/Ww=",
   "success": true,
   "projectFilePath": "/mnt/e/source/repos/otel-aws-console-demo/src/OtelAwsConsoleDemo/OtelAwsConsoleDemo.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "/home/whiterabbit/.nuget/packages/opentelemetry.api.providerbuilderextensions/1.13.1/opentelemetry.api.providerbuilderextensions.1.13.1.nupkg.sha512",
     "/home/whiterabbit/.nuget/packages/opentelemetry.exporter.console/1.13.1/opentelemetry.exporter.console.1.13.1.nupkg.sha512",
     "/home/whiterabbit/.nuget/packages/opentelemetry.exporter.opentelemetryprotocol/1.13.1/opentelemetry.exporter.opentelemetryprotocol.1.13.1.nupkg.sha512",
+    "/home/whiterabbit/.nuget/packages/opentelemetry.extensions.aws/1.13.0/opentelemetry.extensions.aws.1.13.0.nupkg.sha512",
     "/home/whiterabbit/.nuget/packages/opentelemetry.extensions.hosting/1.13.1/opentelemetry.extensions.hosting.1.13.1.nupkg.sha512",
     "/home/whiterabbit/.nuget/packages/opentelemetry.instrumentation.aspnetcore/1.13.0/opentelemetry.instrumentation.aspnetcore.1.13.0.nupkg.sha512",
     "/home/whiterabbit/.nuget/packages/opentelemetry.instrumentation.http/1.13.0/opentelemetry.instrumentation.http.1.13.0.nupkg.sha512",

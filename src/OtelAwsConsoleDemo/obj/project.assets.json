@@ -365,6 +365,22 @@
           }
         }
       },
+      "OpenTelemetry.Extensions.AWS/1.13.0": {
+        "type": "package",
+        "dependencies": {
+          "OpenTelemetry": "[1.13.1, 2.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/OpenTelemetry.Extensions.AWS.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/OpenTelemetry.Extensions.AWS.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "OpenTelemetry.Extensions.Hosting/1.13.1": {
         "type": "package",
         "dependencies": {
@@ -1093,6 +1109,26 @@
         "opentelemetry.exporter.opentelemetryprotocol.nuspec"
       ]
     },
+    "OpenTelemetry.Extensions.AWS/1.13.0": {
+      "sha512": "9f/+BXjXqAaXSD3qQVxe1CBjtYcbOcFJFTTbv8NBCGm1L4FsVk4F6wK6TxKKmjmAqM/oVFw1Zn3fs+mk9DmJZQ==",
+      "type": "package",
+      "path": "opentelemetry.extensions.aws/1.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "README.md",
+        "lib/net462/OpenTelemetry.Extensions.AWS.dll",
+        "lib/net462/OpenTelemetry.Extensions.AWS.xml",
+        "lib/net8.0/OpenTelemetry.Extensions.AWS.dll",
+        "lib/net8.0/OpenTelemetry.Extensions.AWS.xml",
+        "lib/netstandard2.0/OpenTelemetry.Extensions.AWS.dll",
+        "lib/netstandard2.0/OpenTelemetry.Extensions.AWS.xml",
+        "opentelemetry-icon-color.png",
+        "opentelemetry.extensions.aws.1.13.0.nupkg.sha512",
+        "opentelemetry.extensions.aws.nuspec"
+      ]
+    },
     "OpenTelemetry.Extensions.Hosting/1.13.1": {
       "sha512": "gULeizu0WH4YxnVltLO/Ml12aGxpk2Qrz3dm3MUgohQ/Y8HsGDzuAhawEP1eas6dMO61PJta1dy6KqNbVIJQyw==",
       "type": "package",
@@ -1219,6 +1255,7 @@
     "net9.0": [
       "OpenTelemetry.Exporter.Console >= 1.13.1",
       "OpenTelemetry.Exporter.OpenTelemetryProtocol >= 1.13.1",
+      "OpenTelemetry.Extensions.AWS >= 1.13.0",
       "OpenTelemetry.Extensions.Hosting >= 1.13.1",
       "OpenTelemetry.Instrumentation.AspNetCore >= 1.13.0",
       "OpenTelemetry.Instrumentation.Http >= 1.13.0",
@@ -1276,6 +1313,10 @@
           "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
             "target": "Package",
             "version": "[1.13.1, )"
+          },
+          "OpenTelemetry.Extensions.AWS": {
+            "target": "Package",
+            "version": "[1.13.0, )"
           },
           "OpenTelemetry.Extensions.Hosting": {
             "target": "Package",

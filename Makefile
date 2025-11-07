@@ -1,26 +1,26 @@
-.ONESHELL:
-SHELL := /bin/bash
-APP=OtelAwsConsoleDemo
+.PHONY: docker-build up down logs hit demo-compose collector-validate tail-collector
 
+docker-build:
+	docker build -t otel-aws-console-demo:local -f docker/Dockerfile .
 
-restore:
-	dotnet restore src/$(APP)
+up:
+	docker compose up -d --build
 
-build: restore
-	dotnet build src/$(APP) -c Release
+down:
+	docker compose down -v
 
-run:
-	dotnet run --project src/$(APP) -c Release
+logs:
+	docker compose logs -f otel-collector
 
-demo:
-	set -euo pipefail
-	dotnet run --project src/$(APP) -c Release &
-	APP_PID=$$!
-	sleep 2
-	curl -s http://localhost:8080/ping ; echo
-	curl -s http://localhost:8080/work ; echo
-	kill $$APP_PID
-	wait $$APP_PID || true
+hit:
+	@curl -s http://localhost:8080/ping && echo
+	@curl -s http://localhost:8080/work && echo
 
-clean:
-	rm -rf src/$(APP)/bin src/$(APP)/obj
+demo-compose: up
+	@sleep 2
+	$(MAKE) hit
+	@echo "---- last 80 lines from collector ----"
+	@docker compose logs --no-log-prefix otel-collector | tail -n 80
+
+collector-validate:
+	docker compose exec -T otel-collector /otelcol-contrib validate --config=/etc/otelcol/config.yaml
