@@ -55,3 +55,7 @@ make down
 - The Collector uses the debug exporter to print incoming telemetry (the logging exporter was removed; use debug).
 
 - Config via env vars follows the OpenTelemetry spec (e.g., OTEL_PROPAGATORS, OTEL_RESOURCE_ATTRIBUTES, OTEL_TRACES_SAMPLER).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
